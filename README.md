@@ -67,7 +67,7 @@ To run the experiments with other datasets, use “run_bpRNA.py”, “run_bpRNA
 ## Comparison results
 
 ### Projection of RNA-LLM embeddings
-This [notebook](notebooks/UMAP.ipynb) makes use of a UMAP projection technique to illustrate the high-dimensional embeddings into a 3D space.
+This [notebook](notebooks/UMAP.ipynb) makes use of a UMAP projection to illustrate the high-dimensional embeddings into a 3D space.
 
 ### Performance on increasing homology challenge datasets
 This [notebook](notebooks/violinplots.ipynb) generates the violinplots for performance analysis for each RNA-LLM with the different datasets.
