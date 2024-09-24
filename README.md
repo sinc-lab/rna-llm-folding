@@ -7,7 +7,7 @@ This repository contains the data and code used in:
 
 In the last three years, a number of RNA-LLM have appeared in literature. We selected them based on their open access availability, and summarized its main features in the table below. See the preprint for details [here](link).
 
-| LLM         | Visualization | Embedding dimension | Pre-training sequences | Database   | Architecture (number of layers) | Number of parameters | Repository                                      |
+| LLM         | Visualization | Dim | Pre-training sequences | Database   | Architecture (number of layers) | Number of parameters | Repository                                      |
 |-------------|----------------------------------------------------------------------------------------------------|---------------------|-----------------------|------------|--------------------------------|----------------------|-------------------------------------------------|
 | RNABERT 2022 [[1](https://academic.oup.com/nargab/article/4/1/lqac012/6534363)] |  <img src="fig/rnabert.png" alt="RNABERT"  height = 100px>           | 120           | 70 k              | RNAcentral            | Transformer (6)       | 500 k              | [Link](https://github.com/mana438/RNABERT)       |
 | RNA-FM 2022 [[2](https://arxiv.org/abs/2204.00300)]     | <img src="fig/rnafm.png" alt="RNA-FM"  height = 100px>             | 640           | 23 M          | RNAcentral            | Transformer (12)      | 100 M          | [Link](https://github.com/ml4bio/RNA-FM)         |
