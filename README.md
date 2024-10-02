@@ -42,13 +42,13 @@ To train the model, you will need to download the RNA-LLM embedding representati
 
 | ArchiveII   |  bpRNA & bpRNA-new | PDB-RNA |
 |-----------|---------|---------|
-| one-hot * | [one-hot]()  | [one-hot](https://zenodo.org/api/records/13821093/draft/files/one-hot_pdb-rna.7z/content) |
-| [RNABERT](https://zenodo.org/api/records/13821093/draft/files/rnabert_ArchiveII.7z/content)|  [RNABERT](https://zenodo.org/api/records/13821093/draft/files/rnabert_bpRNA.7z/content)|   [RNABERT](https://zenodo.org/api/records/13821093/draft/files/rnabert_pdb-rna.7z/content)|
-| [RNA-FM](https://zenodo.org/api/records/13821093/draft/files/rnafm_ArchiveII.7z/content)| [RNA-FM](https://zenodo.org/api/records/13821093/draft/files/rnafm_bpRNA.7z/content)| [RNA-FM](https://zenodo.org/api/records/13821093/draft/files/rnafm_pdb-rna.7z/content)|
-| [RNA-MSM](https://zenodo.org/api/records/13821093/draft/files/rna-msm_ArchiveII.7z/content)| [RNA-MSM](https://zenodo.org/api/records/13821093/draft/files/rna-msm_bpRNA.7z/content)| [RNA-MSM](https://zenodo.org/api/records/13821093/draft/files/rna-msm_pdb-rna.7z/content)|
-| [ERNIE-RNA](https://zenodo.org/api/records/13821093/draft/files/ERNIE-RNA_ArchiveII.7z/content)| [ERNIE-RNA](https://zenodo.org/api/records/13821093/draft/files/ERNIE-RNA_bpRNA.7z/content)| [ERNIE-RNA](https://zenodo.org/api/records/13821093/draft/files/ERNIE-RNA_pdb-rna.7z/content)|
-| [RNAErnie](https://zenodo.org/api/records/13821093/draft/files/RNAErnie_ArchiveII.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/draft/files/RNAErnie_bpRNA.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/draft/files/RNAErnie_pdb-rna.7z/content)|
-| [RiNALMo](https://zenodo.org/api/records/13821093/draft/files/RiNALMo_ArchiveII.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/draft/files/RiNALMo_bpRNA.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/draft/files/RiNALMo_pdb-rna.7z/content)|
+| one-hot * | [one-hot](https://zenodo.org/records/13821093/files/one-hot_bpRNA.7z/content)  | [one-hot](https://zenodo.org/api/records/13821093/files/one-hot_pdb-rna.7z/content) |
+| [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_ArchiveII.7z/content)|  [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_bpRNA.7z/content)|   [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_pdb-rna.7z/content)|
+| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_ArchiveII.7z/content)| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_bpRNA.7z/content)| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_pdb-rna.7z/content)|
+| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_ArchiveII.7z/content)| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_bpRNA.7z/content)| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_pdb-rna.7z/content)|
+| [ERNIE-RNA](https://zenodo.org/api/records/13821093/files/ERNIE-RNA_ArchiveII.7z/content)| [ERNIE-RNA](https://zenodo.org/api/records/13821093/files/ERNIE-RNA_bpRNA.7z/content)| [ERNIE-RNA](https://zenodo.org/api/records/13821093/files/ERNIE-RNA_pdb-rna.7z/content)|
+| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_ArchiveII.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_bpRNA.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_pdb-rna.7z/content)|
+| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_ArchiveII.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_bpRNA.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_pdb-rna.7z/content)|
 
 *One-hot embeddings file for the ArchiveII dataset is already provided in the `/data/embeddings` folder.
 
