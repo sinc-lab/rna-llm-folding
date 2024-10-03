@@ -28,7 +28,7 @@ else:
 # Create results file withe the name of input file
 out_name = os.path.splitext(os.path.split(args.test_partition_path)[-1])[0]
 
-embeddings_path = f"../data/embeddings/{args.emb}.h5"
+embeddings_path = f"data/embeddings/{args.emb}.h5"
 
 logging.basicConfig(
     level=logging.DEBUG,  # Set the minimum log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
