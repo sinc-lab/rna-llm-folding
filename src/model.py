@@ -3,8 +3,8 @@ import torch
 from torch.nn.functional import cross_entropy
 from torch.optim.lr_scheduler import LinearLR
 import pandas as pd
-from src.metrics import contact_f1
-from src.utils import mat2bp, outer_concat
+from metrics import contact_f1
+from utils import mat2bp, outer_concat
 from tqdm import tqdm
 
 class ResNet2DBlock(nn.Module):

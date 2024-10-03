@@ -1,6 +1,6 @@
 import torch
 from sklearn.metrics import f1_score
-from src.utils import mat2bp
+from utils import mat2bp
 
 def contact_f1(ref_batch, pred_batch, Ls, th=0.5, reduce=True, method="triangular"):
     """Compute F1 from base pairs. Input goes to sigmoid and then thresholded"""

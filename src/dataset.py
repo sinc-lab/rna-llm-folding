@@ -3,7 +3,7 @@ from torch.utils.data import Dataset
 import pandas as pd
 import h5py
 import json
-from src.utils import bp2matrix
+from utils import bp2matrix
 
 class EmbeddingDataset(Dataset):
     def __init__(
