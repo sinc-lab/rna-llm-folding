@@ -5,9 +5,9 @@ import logging
 import os
 import pandas as pd
 
-from src.model import SecondaryStructurePredictor
-from src.dataset import create_dataloader
-from src.utils import get_embed_dim
+from model import SecondaryStructurePredictor
+from dataset import create_dataloader
+from utils import get_embed_dim
 
 parser = argparse.ArgumentParser()
 
