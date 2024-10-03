@@ -12,8 +12,7 @@ args = parser.parse_args()
 llm_and_dataset = args.emb.split("_")
 llm = llm_and_dataset[0]
 dataset = llm_and_dataset[1]
-current_timestamp = datetime.datetime.now()
-current_timestamp.strftime('%Y%m%dT%H%M%S')
+current_timestamp = datetime.datetime.now().strftime('%Y%m%dT%H%M%S')
 
 df = pd.read_csv(f'data/pdb-rna.csv', index_col="id")
 splits = pd.read_csv(f"data/pdb-rna_splits.csv", index_col="id")

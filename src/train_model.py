@@ -28,7 +28,7 @@ else:
 
 os.makedirs(args.out_path, exist_ok=True)
 
-embeddings_path = f"../data/embeddings/{args.emb}.h5"
+embeddings_path = f"data/embeddings/{args.emb}.h5"
 
 logging.basicConfig(
     level=logging.DEBUG,  # Set the minimum log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
