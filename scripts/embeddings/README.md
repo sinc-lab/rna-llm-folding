@@ -84,13 +84,13 @@ python RNAERNIE.py
 
 # RNA-MSM
 
-## Conda environment creation
+### Conda environment creation
 ```
 conda create -n rnamsm python=3.8.5
 conda activate rnamsm
 ```
 
-## Required packages
+### Required packages
 ```
 conda install hhsuite=3.3.0
 pip install tqdm pytorch_lightning transformers msm scipy Bio tape_proteins scikit-learn numba hydra hydra-core
@@ -99,7 +99,7 @@ git clone git@github.com:yikunpku/RNA-MSM.git
 cd ./RNA-MSM
 ```
 
-## Required modifications to run RNA-MSM code
+### Required modifications to run RNA-MSM code
 ```
 > utils/_init_.py
     - REPLACE:
@@ -132,7 +132,7 @@ cd ./RNA-MSM
         os.system(command)
 ```
 
-## TO run RNA-MSM inference
+### To run RNA-MSM inference
 
 ```
 python RNA_MSM_Inference.py data.root_path='<FULLPATH TO RNA-MSM>' \
@@ -141,6 +141,6 @@ python RNA_MSM_Inference.py data.root_path='<FULLPATH TO RNA-MSM>' \
                             data.MSA_list=rna_id.txt
 ```
 
-## Notes about RNA-MSM
+### Notes about RNA-MSM
 - An IDX file can be created for each experiment, with the list of sequence names to be analyzed.
 - Each sequence must have its ".fasta" file and its ".a2m_msa2" file (alignments).
