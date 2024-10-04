@@ -19,7 +19,7 @@ These steps will guide you through the process of training the secondary structu
 First:
 ```
 git clone https://github.com/sinc-lab/rna-llm-folding
-cd rna-llm-comparison/
+cd rna-llm-folding/
 ```
 With a conda working installation, run:
 
