@@ -51,7 +51,7 @@ To train the model, you will need to download the RNA-LLM embedding representati
 
 **Note:** Instructions to generate the RNA-LLM embeddings listed above are detailed in `scripts/embeddings`.
 
-## Train and test scripts
+## Reproduce the experiments
 Scripts to train and evaluate aRNA-LLM for RNA secondary structure prediction are in the `scripts` folder. 
 Here’s an example: if you wanted to use the _one-hot_ embedding for the _ArchiveII_ dataset (which we provide with this repository), you’d need to run:
 ```
