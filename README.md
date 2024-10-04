@@ -1,11 +1,8 @@
 # Comprehensive benchmarking on the use of RNA Large Language Models for RNA secondary structure prediction
 
-This repository contains the data and code used in:
-    
-"Comprehensive benchmarking on the use of RNA Large Language Models for RNA secondary structure prediction," by L.I. Zablocki, L.A. Bugnon, M. Gerard, L. Di Persia, G. Stegmayer, D.H. Milone (under review). Research Institute for Signals, Systems and Computational Intelligence, sinc(i).
+This repository contains the data and code used for the comprehensive analysis of state-of-the-art RNA large language models (LLM): "Comprehensive benchmarking on the use of RNA Large Language Models for RNA secondary structure prediction," by L.I. Zablocki, L.A. Bugnon, M. Gerard, L. Di Persia, G. Stegmayer, D.H. Milone (under review). Research Institute for Signals, Systems and Computational Intelligence, [sinc(i)](https://sinc.unl.edu.ar).
 
-
-In the last three years, a number of RNA-LLM have appeared in literature. We selected them based on their open access availability, and summarized its main features in the table below. See the preprint for details [here](link).
+In the last three years, a number of RNA-LLM have appeared in literature. We selected them based on their open access availability, and summarized its main features in the table below.
 
 | LLM         | Visualization | Dim | Pre- training seqs | Database   | Architecture (number of layers) | Number of parameters | Source                                      |
 |-------------|----------------------------------------------------------------------------------------------------|---------------------|-----------------------|------------|--------------------------------|----------------------|-------------------------------------------------|
@@ -37,7 +34,7 @@ conda activate rna-llm-folding
 
 ## RNA-LLM pre-computed embeddings
 
-To train the model, you will need to download the RNA-LLM embedding representations for the desired LLM-dataset combination from the following table, and save them in `/data/embeddings/` directory. 
+To train the model, you will need to download the RNA-LLM embedding representations for the desired LLM-dataset combination from the following table, and save them in `data/embeddings` directory. 
 
 
 | ArchiveII   |  bpRNA & bpRNA-new | PDB-RNA |
@@ -50,24 +47,26 @@ To train the model, you will need to download the RNA-LLM embedding representati
 | [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_ArchiveII.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_bpRNA.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_pdb-rna.7z/content)|
 | [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_ArchiveII.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_bpRNA.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_pdb-rna.7z/content)|
 
-*One-hot embeddings file for the ArchiveII dataset is already provided in the `/data/embeddings` folder.
+*One-hot embeddings file for the ArchiveII dataset is already provided in `data/embeddings` folder.
 
-**Note:** Instructions to generate the RNA-LLM embeddings are detailed in `rna-llm-folding/scripts/embeddings`
+**Note:** Instructions to generate the RNA-LLM embeddings listed above are detailed in `scripts/embeddings`.
 
 ## Train and test scripts
-Scripts to train and evaluate aRNA-LLM for RNA secondary structure prediction are in the `scripts/` folder. 
-Here’s an example: if you wanted to use the one-hot embedding for the ArchiveII dataset (which we provide with this repository), you’d need to run:
+Scripts to train and evaluate aRNA-LLM for RNA secondary structure prediction are in the `scripts` folder. 
+Here’s an example: if you wanted to use the _one-hot_ embedding for the _ArchiveII_ dataset (which we provide with this repository), you’d need to run:
 ```
-python scripts/run_archiveII_famfold.py --emb-path one-hot_ArchiveII
+python scripts/run_archiveII_famfold.py --emb one-hot_ArchiveII
 ```
-The --emb option is used to tell the model where to find the embedding representations that will be used to train and test the model. In the example, we used the one-hot embedding for ArchiveII, already available in `/data/embeddings`. By default, the train will be executed on GPU if available. To use other embeddings and datasets, download and place the files from  [here](). 
+The --emb option is used to tell the model the desired LLM-dataset combination that will be used for training and test.. In the example, we used the _one-hot_ embedding for _ArchiveII_, already available in `data/embeddings`. By default, the train will be executed on GPU if available. To use other embeddings and datasets, download the files from [here](#rna-llm-pre-computed-embeddings). 
 
-To run the experiments with other datasets, use “run_bpRNA.py”, “run_bpRNA_new.py” and “run_pdb-rna.py”, which receive the same command line arguments. Results will be saved in `results/{LLM name}_{dataset name}’.
+To run the experiments with other datasets, use `scripts/run_bpRNA.py`, `scripts/run_bpRNA_new.py`, `scripts/run_pdb-rna.py` and `scripts/run_archiveII_kfold.py`, which are invoked the same way that’s described in the example.
+
+Results will be saved in `results/<dataset>/<llm name>/<timestamp>`.
 
 ## Comparison results
 
 ### Projection of RNA-LLM embeddings
-This [notebook](notebooks/UMAP.ipynb) makes use of a UMAP projection to illustrate the high-dimensional embeddings into a 3D space.
+The [UMAP notebook](notebooks/UMAP.ipynb) makes use of a UMAP projection to illustrate the high-dimensional embeddings into a 3D space.
 
 ### Performance on increasing homology challenge datasets
-This [notebook](notebooks/violinplots.ipynb) generates the violinplots for performance analysis for each RNA-LLM with the different datasets.
+The [violinplots notebook](notebooks/violinplots.ipynb) generates the violin plots for performance analysis for each RNA-LLM with the different datasets.
