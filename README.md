@@ -1,6 +1,6 @@
 # Comprehensive benchmarking on the use of RNA Large Language Models for RNA secondary structure prediction
 
-This repository contains the data and code used for the comprehensive analysis of state-of-the-art RNA large language models (LLM): "Comprehensive benchmarking on the use of RNA Large Language Models for RNA secondary structure prediction," by L.I. Zablocki, L.A. Bugnon, M. Gerard, L. Di Persia, G. Stegmayer, D.H. Milone (under review). Research Institute for Signals, Systems and Computational Intelligence, [sinc(i)](https://sinc.unl.edu.ar).
+This repository contains the data and code used for the comprehensive analysis of state-of-the-art RNA large language models (LLM): "Comprehensive benchmarking on the use of RNA Large Language Models for RNA secondary structure prediction" by L.I. Zablocki, L.A. Bugnon, M. Gerard, L. Di Persia, G. Stegmayer, D.H. Milone (under review). Research Institute for Signals, Systems and Computational Intelligence, [sinc(i)](https://sinc.unl.edu.ar).
 
 In the last three years, a number of RNA-LLM have appeared in literature. We selected them based on their open access availability, and summarized its main features in the table below.
 
