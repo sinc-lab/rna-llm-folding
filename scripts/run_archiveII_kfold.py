@@ -28,5 +28,5 @@ for k in range(5):
     train.to_csv(f"{data_path}train.csv")
     test.to_csv(f"{data_path}test.csv")
 
-    os.system(f"python src/train_model.py --emb {args.emb} --train_partition_path {data_path}train.csv --out_path {out_path} --max_epochs 1")
+    os.system(f"python src/train_model.py --emb {args.emb} --train_partition_path {data_path}train.csv --out_path {out_path}")
     os.system(f"python src/test_model.py --emb {args.emb} --test_partition_path {data_path}test.csv --out_path {out_path}")
