@@ -21,7 +21,7 @@ for k in range(5):
     train = df.loc[splits[(splits.fold==k) & (splits.partition!="test")].index]
     test = df.loc[splits[(splits.fold==k) & (splits.partition=="test")].index]
     data_path = f"data/archiveII_kfold/{k}/"
-    out_path = f"results/{dataset}_kfold/{llm}/{k}/{current_timestamp}"
+    out_path = f"results/{dataset}_kfold_{llm}_{k}_{current_timestamp}"
     os.makedirs(data_path, exist_ok=True)
     shutil.rmtree(out_path, ignore_errors=True)
     os.makedirs(out_path, exist_ok=True)

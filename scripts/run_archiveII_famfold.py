@@ -21,7 +21,7 @@ for fam in splits.fold.unique():
     train = df.loc[splits[(splits.fold==fam) & (splits.partition!="test")].index]
     test = df.loc[splits[(splits.fold==fam) & (splits.partition=="test")].index]
     data_path = f"data/archiveII_famfold/{fam}/"
-    out_path = f"results/{dataset}_famfold/{llm}/{fam}/{current_timestamp}"
+    out_path = f"results/{dataset}_famfold_{llm}_{fam}_{current_timestamp}"
     os.makedirs(data_path, exist_ok=True)
     shutil.rmtree(out_path, ignore_errors=True)
     os.makedirs(out_path, exist_ok=True)

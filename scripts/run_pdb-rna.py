@@ -20,7 +20,7 @@ splits = pd.read_csv(f"data/pdb-rna_splits.csv", index_col="id")
 train = df.loc[splits.partition=="train"] 
 test = df.loc[splits.partition=="test"]
 data_path = f"data/pdb_splits/"
-out_path = f"results/{dataset}/{llm}/{current_timestamp}"
+out_path = f"results/{dataset}_{llm}_{current_timestamp}"
 os.makedirs(data_path, exist_ok=True)
 shutil.rmtree(out_path, ignore_errors=True)
 os.makedirs(out_path, exist_ok=True)

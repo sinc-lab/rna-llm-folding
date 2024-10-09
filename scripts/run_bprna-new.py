@@ -22,7 +22,7 @@ splits = pd.read_csv(f"data/bpRNA_splits.csv", index_col="id")
 train = pd.concat((df.loc[splits.partition=="TR0"], df.loc[splits.partition=="VL0"])) 
 test = df.loc[splits.partition=="new"]
 data_path = f"data/bprna/"
-out_path = f"results/{dataset}_new/{llm}/{current_timestamp}"
+out_path = f"results/{dataset}_new_{llm}_{current_timestamp}"
 os.makedirs(data_path, exist_ok=True)
 shutil.rmtree(out_path, ignore_errors=True)
 os.makedirs(out_path, exist_ok=True)
