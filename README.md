@@ -65,8 +65,8 @@ Results will be saved in `results/<dataset>/<llm name>/<timestamp>`.
 
 ## Comparison results
 
-- **Projection of RNA-LLM embeddings**: The [UMAP notebook](notebooks/UMAP.ipynb) makes use of a UMAP projection to illustrate the high-dimensional embeddings into a 3D space.
+- **Projection of RNA-LLM embeddings**: The [UMAP notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/UMAP.ipynb) makes use of a UMAP projection to illustrate the high-dimensional embeddings into a 3D space.
 
-- **Performance on increasing homology challenge datasets**: The [violinplots notebook](notebooks/violinplots.ipynb) generates the violin plots for performance analysis for each RNA-LLM with the different datasets.
+- **Performance on increasing homology challenge datasets**: The [violinplots notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/violinplots.ipynb) generates the violin plots for performance analysis for each RNA-LLM with the different datasets.
 
-- **Non-canonical and motifs performance**: [This notebook](notebooks/nc_motifs.ipynb) generates the comparison of non-canonical base pairs and the characterization of performance by structural motifs.
+- **Non-canonical and motifs performance**: [This notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/nc_motifs.ipynb) generates the comparison of non-canonical base pairs and the characterization of performance by structural motifs.
