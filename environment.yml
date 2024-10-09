@@ -6,7 +6,7 @@ channels:
 dependencies:
   - h5py
   - tqdm
-  - pandas=2.2.1
+  - pandas
   - python=3.11.9
   - pytorch=2.3.0
   - pytorch-cuda=11.8
