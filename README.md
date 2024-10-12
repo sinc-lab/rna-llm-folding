@@ -69,4 +69,6 @@ Results will be saved in `results/<dataset>/<llm name>/<timestamp>`.
 
 - **Performance on increasing homology challenge datasets**: The [violinplots notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/violinplots.ipynb) generates the violin plots for performance analysis for each RNA-LLM with the different datasets.
 
+- **Cross-family benchmarks**: We used the [boxplots notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/boxplots.ipynb) to assess inter-family performance.
+
 - **Non-canonical and motifs performance**: [This notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/nc_motifs.ipynb) generates the comparison of non-canonical base pairs and the characterization of performance by structural motifs.
