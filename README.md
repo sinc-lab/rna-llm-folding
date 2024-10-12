@@ -61,7 +61,7 @@ To train the model, you will need to download the RNA-LLM embedding representati
 
 | ArchiveII   |  bpRNA & bpRNA-new | PDB-RNA |
 |-----------|---------|---------|
-| [one-hot](https://zenodo.org/records/13821093/files/one-hot_ArchiveII.7z/content) | [one-hot](https://zenodo.org/records/13821093/files/one-hot_bpRNA.7z/content)  | [one-hot](https://zenodo.org/api/records/13821093/files/one-hot_pdb-rna.7z/content) |
+| [one-hot](https://zenodo.org/api/records/13821093/files/one-hot_ArchiveII.7z/content) | [one-hot](https://zenodo.org/api/records/13821093/files/one-hot_bpRNA.7z/content)  | [one-hot](https://zenodo.org/api/records/13821093/files/one-hot_pdb-rna.7z/content) |
 | [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_ArchiveII.7z/content)|  [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_bpRNA.7z/content)|   [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_pdb-rna.7z/content)|
 | [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_ArchiveII.7z/content)| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_bpRNA.7z/content)| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_pdb-rna.7z/content)|
 | [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_ArchiveII.7z/content)| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_bpRNA.7z/content)| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_pdb-rna.7z/content)|
