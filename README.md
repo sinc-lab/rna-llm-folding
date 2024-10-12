@@ -1,6 +1,6 @@
 # Comprehensive benchmarking of large language models for RNA secondary structure prediction
 
-This repository contains the data and code used for the comprehensive analysis of state-of-the-art RNA large language models (LLM): "Comprehensive benchmarking on the use of RNA Large Language Models for RNA secondary structure prediction" by L.I. Zablocki, L.A. Bugnon, M. Gerard, L. Di Persia, G. Stegmayer, D.H. Milone (under review). Research Institute for Signals, Systems and Computational Intelligence, [sinc(i)](https://sinc.unl.edu.ar).
+This repository contains the data and code used for the comprehensive analysis of state-of-the-art RNA large language models (LLM): "Comprehensive benchmarking of Large Language Models for RNA secondary structure prediction" by L.I. Zablocki, L.A. Bugnon, M. Gerard, L. Di Persia, G. Stegmayer, D.H. Milone (under review). Research Institute for Signals, Systems and Computational Intelligence, [sinc(i)](https://sinc.unl.edu.ar).
 
 In the last three years, a number of RNA-LLM have appeared in literature. We selected them based on their open access availability, and summarized its main features in the table below.
 
@@ -32,36 +32,17 @@ This should install all required dependencies. Then, activate the environment wi
 conda activate rna-llm-folding
 ```
 
-## RNA-LLM pre-computed embeddings
-
-To train the model, you will need to download the RNA-LLM embedding representations for the desired LLM-dataset combination from the following table, and save them in `data/embeddings` directory. 
-
-
-| ArchiveII   |  bpRNA & bpRNA-new | PDB-RNA |
-|-----------|---------|---------|
-| one-hot * | [one-hot](https://zenodo.org/records/13821093/files/one-hot_bpRNA.7z/content)  | [one-hot](https://zenodo.org/api/records/13821093/files/one-hot_pdb-rna.7z/content) |
-| [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_ArchiveII.7z/content)|  [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_bpRNA.7z/content)|   [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_pdb-rna.7z/content)|
-| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_ArchiveII.7z/content)| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_bpRNA.7z/content)| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_pdb-rna.7z/content)|
-| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_ArchiveII.7z/content)| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_bpRNA.7z/content)| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_pdb-rna.7z/content)|
-| [ERNIE-RNA](https://zenodo.org/api/records/13821093/files/ERNIE-RNA_ArchiveII.7z/content)| [ERNIE-RNA](https://zenodo.org/api/records/13821093/files/ERNIE-RNA_bpRNA.7z/content)| [ERNIE-RNA](https://zenodo.org/api/records/13821093/files/ERNIE-RNA_pdb-rna.7z/content)|
-| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_ArchiveII.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_bpRNA.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_pdb-rna.7z/content)|
-| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_ArchiveII.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_bpRNA.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_pdb-rna.7z/content)|
-
-*One-hot embeddings file for the ArchiveII dataset is already provided in `data/embeddings` folder.
-
-**Note:** Instructions to generate the RNA-LLM embeddings listed above are detailed in `scripts/embeddings`.
-
 ## Reproduce the experiments
-Scripts to train and evaluate aRNA-LLM for RNA secondary structure prediction are in the `scripts` folder. 
-Here’s an example: if you wanted to use the _one-hot_ embedding for the _ArchiveII_ dataset (which we provide with this repository), you’d need to run:
+Scripts to train and evaluate a RNA-LLM for RNA secondary structure prediction are in `scripts` folder. 
+Here’s an example: if you wanted to use the _one-hot_ embedding for the _ArchiveII_ dataset, you’d need to run:
 ```
 python scripts/run_archiveII_famfold.py --emb one-hot_ArchiveII
 ```
-The --emb option is used to tell the model the desired LLM-dataset combination that will be used for training and test.. In the example, we used the _one-hot_ embedding for _ArchiveII_, already available in `data/embeddings`. By default, the train will be executed on GPU if available. To use other embeddings and datasets, download the files from [here](#rna-llm-pre-computed-embeddings). 
+The --emb option is used to tell the model the desired LLM-dataset combination that will be used for training and test. In the example, we used the _one-hot_ embedding for _ArchiveII_, already available in `data/embeddings`. By default, the train will be executed on GPU if available. To use other embeddings and datasets, download the files from [here](#rna-llm-pre-computed-embeddings). 
 
 To run the experiments with other datasets, use `scripts/run_bpRNA.py`, `scripts/run_bpRNA_new.py`, `scripts/run_pdb-rna.py` and `scripts/run_archiveII_kfold.py`, which are invoked the same way that’s described in the example.
 
-Results will be saved in `results/<dataset>/<llm name>/<timestamp>`.
+Results will be saved in `results/<timestamp>/<dataset>/<llm>`.
 
 ## Comparison results
 
@@ -72,3 +53,20 @@ Results will be saved in `results/<dataset>/<llm name>/<timestamp>`.
 - **Cross-family benchmarks**: We used the [boxplots notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/boxplots.ipynb) to assess inter-family performance.
 
 - **Non-canonical and motifs performance**: [This notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/nc_motifs.ipynb) generates the comparison of non-canonical base pairs and the characterization of performance by structural motifs.
+
+## RNA-LLM pre-computed embeddings
+
+To train the model, you will need to download the RNA-LLM embedding representations for the desired LLM-dataset combination from the following table, and save them in `data/embeddings` directory. 
+
+
+| ArchiveII   |  bpRNA & bpRNA-new | PDB-RNA |
+|-----------|---------|---------|
+| [one-hot](https://zenodo.org/records/13821093/files/one-hot_ArchiveII.7z/content) | [one-hot](https://zenodo.org/records/13821093/files/one-hot_bpRNA.7z/content)  | [one-hot](https://zenodo.org/api/records/13821093/files/one-hot_pdb-rna.7z/content) |
+| [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_ArchiveII.7z/content)|  [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_bpRNA.7z/content)|   [RNABERT](https://zenodo.org/api/records/13821093/files/rnabert_pdb-rna.7z/content)|
+| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_ArchiveII.7z/content)| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_bpRNA.7z/content)| [RNA-FM](https://zenodo.org/api/records/13821093/files/rnafm_pdb-rna.7z/content)|
+| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_ArchiveII.7z/content)| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_bpRNA.7z/content)| [RNA-MSM](https://zenodo.org/api/records/13821093/files/rna-msm_pdb-rna.7z/content)|
+| [ERNIE-RNA](https://zenodo.org/api/records/13821093/files/ERNIE-RNA_ArchiveII.7z/content)| [ERNIE-RNA](https://zenodo.org/api/records/13821093/files/ERNIE-RNA_bpRNA.7z/content)| [ERNIE-RNA](https://zenodo.org/api/records/13821093/files/ERNIE-RNA_pdb-rna.7z/content)|
+| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_ArchiveII.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_bpRNA.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_pdb-rna.7z/content)|
+| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_ArchiveII.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_bpRNA.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_pdb-rna.7z/content)|
+
+**Note:** Instructions to generate the RNA-LLM embeddings listed above are detailed in `scripts/embeddings`.
