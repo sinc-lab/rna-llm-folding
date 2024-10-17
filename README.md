@@ -1,4 +1,4 @@
-# Comprehensive benchmarking of large language models for RNA secondary structure prediction
+# Comprehensive benchmarking of Large Language Models for RNA secondary structure prediction
 
 This repository contains the data and code used for the comprehensive analysis of state-of-the-art RNA large language models (LLM): "Comprehensive benchmarking of Large Language Models for RNA secondary structure prediction" by L.I. Zablocki, L.A. Bugnon, M. Gerard, L. Di Persia, G. Stegmayer, D.H. Milone (under review). Research Institute for Signals, Systems and Computational Intelligence, [sinc(i)](https://sinc.unl.edu.ar).
 
