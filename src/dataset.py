@@ -26,7 +26,6 @@ class EmbeddingDataset(Dataset):
         for seq_id in self.ids:
             self.embeddings[seq_id] = torch.from_numpy(embeddings[seq_id][()])
         
-        print(f"keys are {len(self.embeddings)}")
         self.base_pairs = None
         self.base_pairs = [
             json.loads(data.base_pairs.iloc[i]) for i in range(len(data))

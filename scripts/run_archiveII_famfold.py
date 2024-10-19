@@ -28,5 +28,13 @@ for fam in splits.fold.unique():
     train.to_csv(f"{data_path}train.csv")
     test.to_csv(f"{data_path}test.csv")
 
+    print("+" * 80)
+    print(f"ArchiveII {fam} TRAINING STARTED".center(80))
+    print("+" * 80)
     os.system(f"python src/train_model.py --emb {args.emb} --train_partition_path {data_path}train.csv --out_path {out_path}")
+    print(f"ArchiveII {fam} TRAINING ENDED".center(80))
+    print("+" * 80)
+    print(f"ArchiveII {fam} TESTING STARTED".center(80))
+    print("+" * 80)
     os.system(f"python src/test_model.py --emb {args.emb} --test_partition_path {data_path}test.csv --out_path {out_path}")
+    print(f"ArchiveII {fam} TESTING ENDED".center(80))
