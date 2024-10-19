@@ -9,6 +9,10 @@ from model import SecondaryStructurePredictor
 from dataset import create_dataloader
 from utils import get_embed_dim
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+# Applied workaround for CuDNN issue, install nvrtc.so
+# Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR
 
 parser = argparse.ArgumentParser()
 
@@ -25,7 +29,7 @@ if torch.cuda.is_available():
 else:
     device='cpu'
 
-# Create results file withe the name of input file
+# Create results file with the name of input file
 out_name = os.path.splitext(os.path.split(args.test_partition_path)[-1])[0]
 
 embeddings_path = f"data/embeddings/{args.emb}.h5"
@@ -55,7 +59,6 @@ best_model.load_state_dict(torch.load(args.weights_path if args.weights_path els
 best_model.eval()
 
 
-logger.info("running inference")
 metrics = best_model.test(test_loader)
 metrics = {f"test_{k}": v for k, v in metrics.items()}
 logger.info(" ".join([f"{k}: {v:.3f}" for k, v in metrics.items()]))
@@ -64,7 +67,6 @@ out_file = os.path.join(args.out_path, f"metrics_{out_name}.csv")
 pd.set_option('display.float_format','{:.3f}'.format)
 pd.DataFrame([metrics]).to_csv(out_file, index=False)
 
-logger.info("predicting")
 out_file = os.path.join(args.out_path, f"preds_{out_name}.csv")
 predictions = best_model.pred(test_loader)
 predictions.to_csv(out_file, index=False)

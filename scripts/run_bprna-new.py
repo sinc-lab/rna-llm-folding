@@ -40,7 +40,15 @@ else:
         print(f"skipping bpRNA train, weigths are in {bprna_weigths_file}")
         bprna_weigths_file_path = f"{bprna_weigths_file}"
     else:
+        print("+" * 80)
+        print(f"bpRNA TRAINING STARTED".center(80))
+        print("+" * 80)
         os.system(f"python src/train_model.py --emb {args.emb} --train_partition_path {data_path}train.csv --out_path {out_path}")
+        print(f"bpRNA TRAINING ENDED".center(80))
         bprna_weigths_file_path = f"{out_path}/weigths.pmt"
 
+print("+" * 80)
+print(f"bpRNA-new TESTING STARTED".center(80))
+print("+" * 80)
 os.system(f"python src/test_model.py --emb {args.emb} --test_partition_path {data_path}test.csv --out_path {out_path} --weights_path {bprna_weigths_file_path}")
+print(f"bpRNA-new TESTING ENDED".center(80))

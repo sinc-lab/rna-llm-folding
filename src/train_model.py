@@ -9,6 +9,11 @@ from model import SecondaryStructurePredictor
 from dataset import create_dataloader
 from utils import get_embed_dim
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+# Applied workaround for CuDNN issue, install nvrtc.so
+# Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR
+
 parser = argparse.ArgumentParser()
 
 parser.add_argument("--emb", type=str, help="The name of the desired LLM-dataset combination.")
@@ -65,13 +70,13 @@ if args.val_partition_path:
     logger.info(f"Validation enabled, using file: {args.val_partition_path}")
 
 for epoch in range(args.max_epochs):
-    logger.info(f"starting epoch {epoch}")
+    logger.info(f"Starting epoch {epoch+1}")
     metrics = net.fit(train_loader)
     
     metrics = {f"train_{k}": v for k, v in metrics.items()}
 
     if args.val_partition_path:
-        logger.info("running inference")
+        logger.info("Running validation inference")
         val_metrics = net.test(val_loader)
        
         val_metrics = {f"val_{k}": v for k, v in val_metrics.items()}
@@ -87,4 +92,3 @@ torch.save(
     net.state_dict(),
     os.path.join(args.out_path, f"weights.pmt")
 )
-logger.info(f"finished run!")
