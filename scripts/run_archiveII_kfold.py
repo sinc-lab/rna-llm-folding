@@ -30,7 +30,7 @@ for k in range(5):
     print("+" * 80)
     print(f"ArchiveII FOLD {k} TRAINING STARTED".center(80))
     print("+" * 80)
-    os.system(f"python src/train_model.py --emb {args.emb} --train_partition_path {data_path}train.csv --out_path {out_path} --max_epochs 1")
+    os.system(f"python src/train_model.py --emb {args.emb} --train_partition_path {data_path}train.csv --out_path {out_path}")
     print(f"ArchiveII FOLD {k} TRAINING ENDED".center(80))
     print("+" * 80)
     print(f"ArchiveII FOLD {k} TESTING STARTED".center(80))
