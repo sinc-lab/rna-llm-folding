@@ -4,7 +4,7 @@ This repository contains the data and source code used for the "Comprehensive be
 
 In the last three years, a number of RNA large language models (RNA-LLM) have appeared in literature. We selected the models for benchmarking based on their open access availability, summarizing the main features in the table below.
 
-| LLM         | Visualization | Dim | Pre-training sequences | Pre-training databases   | Architecture (number of layers) | Number of parameters | Source                                      |
+| LLM         | Visualization | Dim | Pre-training sequences | Pre-training databases   | Architecture (number of layers) | Number of parameters | Source |                                    |
 |-------------|----------------------------------------------------------------------------------------------------|---------------------|-----------------------|------------|--------------------------------|----------------------|-------------------------------------------------|
 | RNABERT 2022 [[1](https://academic.oup.com/nargab/article/4/1/lqac012/6534363)] |  <img src="fig/rnabert.png" alt="RNABERT"  height = 100px>           | 120           | 70 k              | RNAcentral            | Transformer (6)       | 500 k              | [Link](https://github.com/mana438/RNABERT)       |
 | RNA-FM 2022 [[2](https://arxiv.org/abs/2204.00300)]     | <img src="fig/rnafm.png" alt="RNA-FM"  height = 100px>             | 640           | 23 M          | RNAcentral            | Transformer (12)      | 100 M          | [Link](https://github.com/ml4bio/RNA-FM)         |
