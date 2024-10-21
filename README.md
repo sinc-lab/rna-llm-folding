@@ -16,6 +16,7 @@ In the last three years, a number of RNA large language models (RNA-LLM) have ap
 ## Installation
 
 These steps will guide you through the process of training the secondary structure RNA predictor model, based on the RNA-LLM representations. 
+
 First:
 ```
 git clone https://github.com/sinc-lab/rna-llm-folding
@@ -26,13 +27,13 @@ With a conda working installation, run:
 ```
 conda env create -f environment.yml
 ```
-This should install all required dependencies. Then, activate the environment with
+This should install all required dependencies. Then, activate the environment with:
 
 ```
 conda activate rna-llm-folding
 ```
 
-## Reproduce the experiments
+## Reproduction of experiments
 Scripts to train and evaluate a RNA-LLM for RNA secondary structure prediction are in `scripts` folder. 
 Here’s an example: if you wanted to use the _one-hot_ embedding for the _ArchiveII_ dataset, you’d need to run:
 ```
