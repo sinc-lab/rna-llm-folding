@@ -41,7 +41,7 @@ For example, to use the _one-hot_ embedding for the _ArchiveII_ dataset, run:
 python scripts/run_archiveII_famfold.py --emb one-hot_ArchiveII
 ```
 
-The --emb option is used to tell the script the desired LLM and dataset combination that will be used for training and testing. In the example, we used the _one-hot_ embedding for _ArchiveII_, already available in `data/embeddings`. By default, train will be executed on GPU if available. Results will be saved in `results/<timestamp>/<dataset>/<llm>`.
+The `--emb` option is used to tell the script the desired LLM and dataset combination that will be used for training and testing. In the example, we used the _one-hot_ embedding for _ArchiveII_, already available in `data/embeddings`. By default, train will be executed on GPU if available. Results will be saved in `results/<timestamp>/<dataset>/<llm>`.
 
 To run the experiments with other datasets, use `scripts/run_bpRNA.py`, `scripts/run_bpRNA_new.py`, `scripts/run_pdb-rna.py` and `scripts/run_archiveII_kfold.py`, which are invoked the same way that’s described in the example.
 
