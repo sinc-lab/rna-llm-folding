@@ -34,30 +34,18 @@ conda activate rna-llm-folding
 ```
 
 ## Reproduction of experiments
-Scripts to train and evaluate a RNA-LLM for RNA secondary structure prediction are in `scripts` folder. 
-Here’s an example: if you wanted to use the _one-hot_ embedding for the _ArchiveII_ dataset, you’d need to run:
+Scripts to train and evaluate a RNA-LLM for RNA secondary structure prediction are in the `scripts` folder. 
+
+For example, to use the _one-hot_ embedding for the _ArchiveII_ dataset, run:
 ```
 python scripts/run_archiveII_famfold.py --emb one-hot_ArchiveII
 ```
-The --emb option is used to tell the model the desired LLM-dataset combination that will be used for training and test. In the example, we used the _one-hot_ embedding for _ArchiveII_, already available in `data/embeddings`. By default, the train will be executed on GPU if available. To use other embeddings and datasets, download the files from [here](#rna-llm-pre-computed-embeddings). 
+
+The --emb option is used to tell the script the desired LLM and dataset combination that will be used for training and testing. In the example, we used the _one-hot_ embedding for _ArchiveII_, already available in `data/embeddings`. By default, train will be executed on GPU if available. Results will be saved in `results/<timestamp>/<dataset>/<llm>`.
 
 To run the experiments with other datasets, use `scripts/run_bpRNA.py`, `scripts/run_bpRNA_new.py`, `scripts/run_pdb-rna.py` and `scripts/run_archiveII_kfold.py`, which are invoked the same way that’s described in the example.
 
-Results will be saved in `results/<timestamp>/<dataset>/<llm>`.
-
-## Comparison results
-
-- **Projection of RNA-LLM embeddings**: The [UMAP notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/UMAP.ipynb) makes use of a UMAP projection to illustrate the high-dimensional embeddings into a 3D space.
-
-- **Performance on increasing homology challenge datasets**: The [violinplots notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/violinplots.ipynb) generates the violin plots for performance analysis for each RNA-LLM with the different datasets.
-
-- **Cross-family benchmarks**: We used the [boxplots notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/boxplots.ipynb) to assess inter-family performance.
-
-- **Non-canonical and motifs performance**: [This notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/nc_motifs.ipynb) generates the comparison of non-canonical base pairs and the characterization of performance by structural motifs.
-
-## RNA-LLM pre-computed embeddings
-
-To train the model, you will need to download the RNA-LLM embedding representations for the desired LLM-dataset combination from the following table, and save them in `data/embeddings` directory. 
+To use other embeddings and datasets, download the RNA-LLM embedding representations for the desired LLM-dataset combination from the following table, and save them in the `data/embeddings` directory.
 
 
 | ArchiveII   |  bpRNA & bpRNA-new | PDB-RNA |
@@ -71,3 +59,13 @@ To train the model, you will need to download the RNA-LLM embedding representati
 | [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_ArchiveII.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_bpRNA.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_pdb-rna.7z/content)|
 
 **Note:** Instructions to generate the RNA-LLM embeddings listed above are detailed in `scripts/embeddings`.
+
+## Comparison results
+
+- **Projection of RNA-LLM embeddings**: The [UMAP notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/UMAP.ipynb) makes use of a UMAP projection to illustrate the high-dimensional embeddings into a 3D space.
+
+- **Performance on increasing homology challenge datasets**: The [violinplots notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/violinplots.ipynb) generates the plots for performance analysis for each RNA-LLM with the different datasets.
+
+- **Cross-family benchmarks**: We used the [boxplots notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/boxplots.ipynb) to assess inter-family performance.
+
+- **Non-canonical and motifs performance**: [This notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/nc_motifs.ipynb) generates the comparison of non-canonical base pairs and the characterization of performance by structural motifs.
