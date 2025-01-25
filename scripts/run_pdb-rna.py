@@ -14,8 +14,8 @@ llm = llm_and_dataset[0]
 dataset = llm_and_dataset[1]
 current_timestamp = datetime.datetime.now().strftime('%Y%m%dT%H%M%S')
 
-df = pd.read_csv(f'data/pdb-rna.csv', index_col="id")
-splits = pd.read_csv(f"data/pdb-rna_splits.csv", index_col="id")
+df = pd.read_csv(f'data/PDB-RNA.csv', index_col="id")
+splits = pd.read_csv(f"data/PDB-RNA_splits.csv", index_col="id")
 
 train = df.loc[splits.partition=="train"] 
 test = df.loc[splits.partition=="test"]
