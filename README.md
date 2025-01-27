@@ -15,7 +15,7 @@ In the last three years, a number of RNA large language models (RNA-LLM) have ap
 
 ## Installation
 
-These steps will guide you through the process of training the secondary structure RNA predictor model, based on the RNA-LLM representations. 
+These steps will guide you through the process of generating RNA embeddings with RNA-LLM models, and  training the secondary structure RNA predictor model, which uses RNA-LLM representations as input. 
 
 First:
 ```
@@ -34,18 +34,18 @@ conda activate rna-llm-folding
 ```
 
 ## Reproduction of experiments
-Scripts to train and evaluate a RNA-LLM for RNA secondary structure prediction are in the `scripts` folder. 
+Scripts to train and evaluate a RNA-LLM-based  secondary structure predictor are in the `scripts` folder. 
 
-For example, to use the _one-hot_ embedding for the _ArchiveII_ dataset, run:
+For example, to use the _one-hot_ embedding for the _ArchiveII_ dataset, in the cross-family partitions, run:
 ```
 python scripts/run_archiveII_famfold.py --emb one-hot_ArchiveII
 ```
 
 The `--emb` option is used to tell the script the desired LLM and dataset combination that will be used for training and testing. In the example, we used the _one-hot_ embedding for _ArchiveII_, already available in `data/embeddings`. By default, train will be executed on GPU if available. Results will be saved in `results/<timestamp>/<dataset>/<llm>`.
 
-To run the experiments with other datasets, use `scripts/run_bpRNA.py`, `scripts/run_bpRNA_new.py`, `scripts/run_pdb-rna.py` and `scripts/run_archiveII_kfold.py`, which are invoked the same way that’s described in the example.
+To run the experiments with other datasets, use `scripts/run_bpRNA.py`, `scripts/run_bpRNA_new.py`, `scripts/run_pdb-rna.py` and `scripts/run_archiveII_kfold.py`, which are invoked the same way that’s described in the example. For more details on the benchmark method and data, check our manuscript.
 
-To use other embeddings and datasets, download the RNA-LLM embedding representations for the desired LLM-dataset combination from the following table, and save them in the `data/embeddings` directory.
+To use other embeddings and datasets, download the RNA-LLM embedding representations for the desired LLM-dataset combination from the following table, and uncompress them in the `data/embeddings` directory. The files are in 7z format.
 
 
 | ArchiveII   |  bpRNA & bpRNA-new | PDB-RNA |
@@ -58,7 +58,10 @@ To use other embeddings and datasets, download the RNA-LLM embedding representat
 | [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_ArchiveII.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_bpRNA.7z/content)| [RNAErnie](https://zenodo.org/api/records/13821093/files/RNAErnie_pdb-rna.7z/content)|
 | [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_ArchiveII.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_bpRNA.7z/content)| [RiNALMo](https://zenodo.org/api/records/13821093/files/RiNALMo_pdb-rna.7z/content)|
 
-**Note:** Instructions to generate the RNA-LLM embeddings listed above are detailed in `scripts/embeddings`.
+Instructions to generate the RNA-LLM embeddings listed above, using the authors methods, are detailed in `scripts/embeddings`.
+
+**HuggingFace demo**
+The benchmark can be run online with HuggingFace models and Colab in [this notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/demo_huggingface.ipynb). Notice that these are not the official model implementations by the RNA-LLM authors.
 
 ## Comparison results
 
