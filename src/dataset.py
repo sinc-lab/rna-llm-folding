@@ -21,11 +21,17 @@ class EmbeddingDataset(Dataset):
         except FileNotFoundError:
             print(f"Embedding file not found: {embeddings_path}")
             exit()
-
+    
+        emb_dim = embeddings[next(iter(embeddings))].shape[1]
+                
         # keep only sequeneces in dataset_path
-        for seq_id in self.ids:
-            self.embeddings[seq_id] = torch.from_numpy(embeddings[seq_id][()])
-        
+        for k, seq_id in enumerate(self.ids):
+            if seq_id in embeddings:
+                self.embeddings[seq_id] = torch.from_numpy(embeddings[seq_id][()])
+            else:
+                L = len(self.sequences[k])
+                self.embeddings[seq_id] = torch.zeros((L, emb_dim))
+            
         self.base_pairs = None
         self.base_pairs = [
             json.loads(data.base_pairs.iloc[i]) for i in range(len(data))
@@ -37,9 +43,6 @@ class EmbeddingDataset(Dataset):
         seq_id = self.ids[idx]
         sequence = self.sequences[idx]
 
-        if seq_id not in self.embeddings:
-            print(f"{seq_id} not present")
-            raise
         seq_emb = self.embeddings[seq_id]
         L = len(sequence) 
 
