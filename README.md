@@ -60,8 +60,8 @@ To use other embeddings and datasets, download the RNA-LLM embedding representat
 
 Instructions to generate the RNA-LLM embeddings listed above, using the authors methods, are detailed in `scripts/embeddings`.
 
-**HuggingFace demo**
-The benchmark can be run online with HuggingFace models and Colab in [this notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/demo_huggingface.ipynb). Notice that these are not the official model implementations by the RNA-LLM authors.
+**HuggingFace demo**:
+The benchmark can be run online with HuggingFace models and Colab in [this notebook](https://colab.research.google.com/github/sinc-lab/rna-llm-folding/blob/main/notebooks/demo_huggingface.ipynb).
 
 ## Comparison results
 
